@@ -5,3 +5,10 @@
 
 <%= link_to 'Write a review', new_restaurant_review_path(@restaurant) %>
 <%= link_to 'Back to Restaurants', restaurants_path %>
+
+<ul>
+<% @restaurant.reviews.each do |review| %>
+<li> <%= review.content %> - <%= review.rating %>
+ </li>
+<% end %>
+</ul>

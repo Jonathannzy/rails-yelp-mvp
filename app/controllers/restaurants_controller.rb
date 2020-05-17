@@ -6,8 +6,8 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(rest_params)
-    if Restaurant.save
-      redirect_to restaurants_path
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
     else
       render :new
     end
